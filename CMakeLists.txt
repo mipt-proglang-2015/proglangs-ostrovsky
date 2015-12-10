@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_VERBOSE_MAKEFILE on)
+set(Python_ADDITIONAL_VERSIONS 3.4)
+find_package(PythonLibs 3.4 REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+python_add_module(floyd floyd.cpp)
+target_link_libraries(floyd ${PYTHON_LIBRARIES})
